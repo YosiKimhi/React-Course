@@ -2,34 +2,42 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-  //const [enteredTitle, setEnteredTitle] = useState('');
-  //const [enteredAmount, setEnteredAmount] = useState('');
-  //const [enteredDate, setEnteredDate] = useState('');
-  const [userInput, setUserInput] = useState({
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
+  /*  const [userInput, setUserInput] = useState({
     enteredTitle: '',
     enteredAmount: '',
     enteredDate: '',
-  });
+  }); */
 
   const titleChangeHandler = (event) => {
-    setUserInput({
+    setEnteredTitle(event.target.value);
+    //this way is not recomended!
+    /*    setUserInput({
       ...userInput,
       enteredTitle: event.target.value,
-    });
+    }); */
+    //this is how we should do it if we are new prev state to update!
+    /*    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    }); */
   };
 
   const amountChangeHandler = (event) => {
-    setUserInput({
+    setEnteredAmount(event.target.value);
+    /*   setUserInput({
       ...userInput,
       enteredAmount: event.target.value,
-    });
+    }); */
   };
 
   const dateChangeHandler = (event) => {
-    setUserInput({
+    setEnteredDate(event.target.value);
+    /*  setUserInput({
       ...userInput,
       enteredDate: event.target.value,
-    });
+    }); */
   };
 
   return (
